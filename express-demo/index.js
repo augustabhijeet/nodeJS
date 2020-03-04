@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 
 //import routes
 const authRoutes = require('./routes/auth');
+const postsRoutes = require('./routes/posts');
 
 
 dotenv.config();
@@ -19,6 +20,7 @@ mongoose.connect(process.env.DB_URI, { useUnifiedTopology: true }, () => {
 app.use(express.json());
 
 //Route middlewares
-app.use('/api', authRoutes);
+app.use('/api/user', authRoutes);
+app.use('/api/posts', postsRoutes);
 
 app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}...`));

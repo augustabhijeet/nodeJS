@@ -1,4 +1,3 @@
-
 const Joi = require('joi');
 
 //Joi validation schema
